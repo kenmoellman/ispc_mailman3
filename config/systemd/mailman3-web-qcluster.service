@@ -1,0 +1,17 @@
+[Unit]
+Description=Mailman3 Web Django-Q Task Cluster
+After=network-online.target mariadb.service mailman3-web.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+Environment=MAILMAN_WEB_CONFIG=/etc/mailman3/settings.py
+WorkingDirectory=/var/lib/mailman3/web
+ExecStart=/opt/mailman3/venv/bin/mailman-web qcluster
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

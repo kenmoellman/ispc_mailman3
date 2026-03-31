@@ -1,0 +1,27 @@
+[Unit]
+Description=Mailman3 Web (Postorius + HyperKitty)
+Documentation=https://docs.mailman3.org/
+After=network-online.target mariadb.service mailman3.service
+Wants=network-online.target
+
+[Service]
+Type=notify
+User=www-data
+Group=www-data
+Environment=MAILMAN_WEB_CONFIG=/etc/mailman3/settings.py
+WorkingDirectory=/var/lib/mailman3/web
+ExecStart=/opt/mailman3/venv/bin/gunicorn \
+    --bind YOUR_PRIVATE_IP:8083 \
+    --bind 127.0.0.1:8083 \
+    --workers 3 \
+    --timeout 300 \
+    --access-logfile /var/log/mailman3/web/access.log \
+    --error-logfile /var/log/mailman3/web/error.log \
+    mailman_web.wsgi:application
+RuntimeDirectory=mailman3-web
+RuntimeDirectoryMode=0755
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

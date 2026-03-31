@@ -1,0 +1,53 @@
+            <div class="form-group">
+                <label for="api_url" class="col-sm-3 control-label">{tmpl_var name='api_url_txt'}</label>
+                <div class="col-sm-9"><input type="text" name="api_url" id="api_url" value="{tmpl_var name='api_url'}" class="form-control" /></div>
+            </div>
+
+            <div class="form-group">
+                <label for="api_user" class="col-sm-3 control-label">{tmpl_var name='api_user_txt'}</label>
+                <div class="col-sm-9"><input type="text" name="api_user" id="api_user" value="{tmpl_var name='api_user'}" class="form-control" /></div>
+            </div>
+
+            <div class="form-group">
+                <label for="api_pass" class="col-sm-3 control-label">{tmpl_var name='api_pass_txt'}</label>
+                <div class="col-sm-9"><input type="password" name="api_pass" id="api_pass" value="{tmpl_var name='api_pass'}" class="form-control" autocomplete="off" /></div>
+            </div>
+
+            <div class="form-group">
+                <label for="postorius_url" class="col-sm-3 control-label">{tmpl_var name='postorius_url_txt'}</label>
+                <div class="col-sm-9"><input type="text" name="postorius_url" id="postorius_url" value="{tmpl_var name='postorius_url'}" class="form-control" /></div>
+            </div>
+
+            <div class="form-group">
+                <label for="hyperkitty_url" class="col-sm-3 control-label">{tmpl_var name='hyperkitty_url_txt'}</label>
+                <div class="col-sm-9"><input type="text" name="hyperkitty_url" id="hyperkitty_url" value="{tmpl_var name='hyperkitty_url'}" class="form-control" /></div>
+            </div>
+
+            <tmpl_if name="connection_status">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">{tmpl_var name='connection_status_txt'}</label>
+                <div class="col-sm-9">
+                    <tmpl_if name="connection_status" op="==" value="ok">
+                        <span class="label label-success">{tmpl_var name='connection_message'}</span>
+                    <tmpl_else>
+                        <span class="label label-danger">{tmpl_var name='connection_message'}</span>
+                    </tmpl_if>
+                </div>
+            </div>
+            </tmpl_if>
+
+            <tmpl_unless name="connection_status">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">{tmpl_var name='connection_status_txt'}</label>
+                <div class="col-sm-9">
+                    <span class="label label-warning">{tmpl_var name='connection_message'}</span>
+                </div>
+            </div>
+            </tmpl_unless>
+
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+
+        <div class="clear"><div class="right">
+            <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="mail/mailmanthree_config_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="mail/mailmanthree_list_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div></div>

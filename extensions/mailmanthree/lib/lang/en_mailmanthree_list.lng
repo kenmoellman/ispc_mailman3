@@ -1,0 +1,37 @@
+<?php
+// Form: mailmanthree_list (create/edit mailing list)
+$wb['domain_txt'] = 'Domain';
+$wb['list_name_txt'] = 'List Name';
+$wb['display_name_txt'] = 'Display Name';
+$wb['description_txt'] = 'Description';
+$wb['owner_email_txt'] = 'Owner Email';
+$wb['password_txt'] = 'Postorius Password';
+$wb['repeat_password_txt'] = 'Repeat Password';
+$wb['active_txt'] = 'Active';
+$wb['member_count_txt'] = 'Members';
+$wb['manage_in_postorius_txt'] = 'List Management';
+$wb['view_archives_txt'] = 'View Archives';
+$wb['fqdn_listname_txt'] = 'List Address';
+$wb['password_strength_txt'] = 'Password strength';
+$wb['generate_password_txt'] = 'Generate';
+$wb['password_mismatch_txt'] = 'Passwords do not match.';
+$wb['password_match_txt'] = 'Passwords match.';
+
+// Validation errors
+$wb['domain_is_empty'] = 'Domain is empty.';
+$wb['list_name_is_empty'] = 'List name is empty.';
+$wb['list_name_invalid'] = 'List name contains invalid characters. Use only lowercase letters, numbers, hyphens, and underscores.';
+$wb['owner_email_is_empty'] = 'Owner email is empty.';
+$wb['owner_email_invalid'] = 'Owner email address is invalid.';
+$wb['password_is_empty'] = 'Password is required for new lists.';
+
+// API errors
+$wb['mailmanthree_api_error_txt'] = 'Could not sync with Mailman3. The operation was not saved.';
+$wb['limit_mailmanthree_list_txt'] = 'The max. number of mailing lists for your account is reached.';
+
+// Buttons
+$wb['btn_save_txt'] = 'Save';
+$wb['btn_cancel_txt'] = 'Cancel';
+$wb['management_txt'] = 'List Management';
+$wb['btn_postorius_txt'] = 'Manage in Postorius';
+$wb['btn_archives_txt'] = 'View Archives';

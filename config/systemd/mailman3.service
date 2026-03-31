@@ -1,0 +1,22 @@
+[Unit]
+Description=Mailman3 Core
+Documentation=https://mailman.readthedocs.io/
+After=network-online.target mariadb.service
+Wants=network-online.target
+
+[Service]
+Type=forking
+User=list
+Group=list
+Environment=MAILMAN_CONFIG_FILE=/etc/mailman3/mailman.cfg
+ExecStart=/opt/mailman3/venv/bin/mailman start
+ExecStop=/opt/mailman3/venv/bin/mailman stop
+ExecReload=/opt/mailman3/venv/bin/mailman restart
+PIDFile=/run/mailman3/master.pid
+RuntimeDirectory=mailman3
+RuntimeDirectoryMode=0755
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

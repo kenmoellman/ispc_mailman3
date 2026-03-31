@@ -1,0 +1,12 @@
+<?php
+// List view: mailmanthree_list (mailing list table)
+$wb['list_head_txt'] = 'Mailing Lists (Mailman3)';
+$wb['list_name_txt'] = 'List Name';
+$wb['domain_txt'] = 'Domain';
+$wb['member_count_txt'] = 'Members';
+$wb['active_txt'] = 'Active';
+$wb['add_new_record_txt'] = 'Add Mailing List';
+$wb['toolsarea_head_txt'] = 'Tools';
+$wb['filter_txt'] = 'Filter';
+$wb['btn_sync_txt'] = 'Refresh from Mailman';
+$wb['delete_confirmation'] = 'Do you really want to delete this mailing list?';

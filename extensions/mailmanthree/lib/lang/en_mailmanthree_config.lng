@@ -1,0 +1,17 @@
+<?php
+// Form: mailmanthree_config (Mailman3 settings)
+$wb['settings_head_txt'] = 'Mailman3 Configuration';
+$wb['api_url_txt'] = 'Mailman3 API URL';
+$wb['api_user_txt'] = 'API Username';
+$wb['api_pass_txt'] = 'API Password';
+$wb['postorius_url_txt'] = 'Postorius URL Path';
+$wb['hyperkitty_url_txt'] = 'HyperKitty URL Path';
+$wb['connection_status_txt'] = 'Connection Status';
+
+// Validation
+$wb['api_url_is_empty'] = 'API URL is empty.';
+$wb['api_user_is_empty'] = 'API Username is empty.';
+
+// Buttons
+$wb['btn_save_txt'] = 'Save';
+$wb['btn_cancel_txt'] = 'Cancel';
